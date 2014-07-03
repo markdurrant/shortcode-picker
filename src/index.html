@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>SHORTCODE PICKER</title>
 
+  <!-- typekit scripts -->
+  <script type="text/javascript" src="//use.typekit.net/lao8jan.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -15,32 +19,32 @@
   <div class="picker-container">
     <!-- plus R, G, B buttons -->
     <div class="plus-vals-container">
-      <button class="R-plus" data-shortcode="#49D"></button>
-      <button class="G-plus" data-shortcode="#3AD"></button>
-      <button class="B-plus" data-shortcode="#39E"></button>
+      <button class="R-plus" data-shortcode="#49D"><span></span></button>
+      <button class="G-plus" data-shortcode="#3AD"><span></span></button>
+      <button class="B-plus" data-shortcode="#39E"><span></span></button>
     </div>
 
     <!-- display current shortcode -->
     <div class="vals-container" data-shortcode="#39D">
-      <div class="R-val"></div>
-      <div class="G-val"></div>
-      <div class="B-val"></div>
+      <div class="R-val"><span></span></div>
+      <div class="G-val"><span></span></div>
+      <div class="B-val"><span></span></div>
     </div>
 
     <!-- minus R, G, B buttons -->
     <div class="minus-vals-container">
-      <button class="R-minus" data-shortcode="#29D"></button>
-      <button class="G-minus" data-shortcode="#38D"></button>
-      <button class="B-minus" data-shortcode="#39C"></button>
+      <button class="R-minus" data-shortcode="#29D"><span></span></button>
+      <button class="G-minus" data-shortcode="#38D"><span></span></button>
+      <button class="B-minus" data-shortcode="#39C"><span></span></button>
     </div>
 
     <!-- lighten / darken buttons -->
-    <button class="RGB-plus"  data-shortcode="#4AE"></button>
-    <button class="RGB-minus" data-shortcode="#28C"></button>
+    <button class="RGB-plus"  data-shortcode="#4AE"><span></span></button>
+    <button class="RGB-minus" data-shortcode="#28C"><span></span></button>
 
     <!-- saturation buttons -->
-    <button class="sat-plus"  data-shortcode="#39D"></button>
-    <button class="sat-minus" data-shortcode="#39D"></button>
+    <button class="sat-plus"  data-shortcode="#29E"><span></span></button>
+    <button class="sat-minus" data-shortcode="#49C"><span></span></button>
   </div> <!-- end .picker-container -->
 
   <script src="js/vendor/jquery-2.1.1.min.js"></script>

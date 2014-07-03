@@ -28,7 +28,7 @@ $col-width:  ( 100% / $cols );
 *::before,
 *:after {
   box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
+  // -webkit-font-smoothing: antialiased;
 }
 
 // remove padding & list styles from all <ul> as default
@@ -45,8 +45,8 @@ body {
 
 body {
   background-color: $paper;
-  color: $ink;
-  font-family: sans-serif;
+  color: white;
+  font-family: "sax-mono", monospace;
   line-height: 1.4;
   overflow: hidden;
 }
@@ -83,16 +83,34 @@ button {
   left: $col-width;
 }
 
-.plus-vals-container {
+.plus-vals-container,
+.minus-vals-container {
   width: 100%;
   height: $row-height;
+}
+
+.R-plus, .R-minus,
+.G-plus, .G-minus,
+.B-plus, .B-minus {
+  width: ( 100% / 3 );
+  height: 100%;
+
+  span {
+    font-size: 1.5em;
+    display: inline-block;
+    height: 1.1em;
+    padding-top: 0.2em;
+  }
+}
+
+.plus-vals-container {
+
 }
 
 .R-plus,
 .G-plus,
 .B-plus {
-  width: ( 100% / 3 );
-  height: 100%;
+
 }
 
 .R-plus {
@@ -112,28 +130,55 @@ button {
   height: $row-height * 2;
 }
 
-.R-val {
-
-}
-
-.G-val {
-
-}
-
+.R-val,
+.G-val,
 .B-val {
+  float: left;
+  height: 100%;
+  width: ( 100% / 3 );
+  position: relative;
 
+  span {
+    position: absolute;
+    font-size: 4em;
+    display: inline-block;
+    height: 1.15em;
+    top: 50%;
+
+    // faux bold
+    text-shadow:
+      1px 0px 0 white,
+      0px 1px 0 white,
+      -1px 0px 0 white,
+      0px -1px 0 white,
+      1px 1px 0 white,
+      -1px -1px 0 white;
+  }
+}
+
+.R-val span{
+  right: 0;
+  transform: translateY( -50% );
+}
+
+.G-val span{
+  left: 50%;
+  transform: translate( -50%, -50% );
+}
+
+.B-val span {
+  left: 0;
+  transform: translateY( -50% );
 }
 
 .minus-vals-container {
-  width: 100%;
-  height: $row-height;
+
 }
 
 .R-minus,
 .G-minus,
 .B-minus {
-  width: ( 100% / 3 );
-  height: 100%;
+
 }
 
 .R-minus {
@@ -154,6 +199,13 @@ button {
 .sat-minus {
   width: 100%;
   height: $row-height * 2;
+  position: relative;
+
+  span {
+    font-size: 3em;
+    display: inline-block;
+    height: 1.15em;
+  }
 }
 
 .RGB-plus {
