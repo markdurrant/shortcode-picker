@@ -219,7 +219,7 @@ button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border: 1px solid black;
+  border: 0;
   background: white;
   outline: 0;
   display: block;
@@ -232,7 +232,7 @@ button {
   position: absolute;
   top: 0;
   left: 0;
-  background: #023; }
+  background: #222; }
 
 /* line 76, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
 .picker-container {
@@ -260,21 +260,23 @@ button {
 /* line 110, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
 .vals-container {
   width: 100%;
-  height: 16.66667%;
-  border: 1px solid black; }
+  height: 16.66667%; }
 
-/* line 128, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+/* line 127, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
 .minus-vals-container {
   width: 100%;
   height: 8.33333%; }
 
-/* line 135, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+/* line 134, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
 .R-minus, .G-minus, .B-minus {
   width: 33.33333%;
   height: 100%; }
 
-/* line 155, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+/* line 154, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
 .RGB-plus, .RGB-minus, .sat-plus, .sat-minus {
   width: 100%;
   height: 16.66667%; }
 
+/* line 171, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+.sat-minus {
+  height: 17.66667%; }

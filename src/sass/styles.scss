@@ -57,7 +57,7 @@ body {
 button {
   @include appearance;
 
-  border: 1px solid $ink;
+  border: 0;
   background: $paper;
   outline: 0;
   display: block;
@@ -70,7 +70,7 @@ button {
   position: absolute;
   top: 0;
   left: 0;
-  background: #023;
+  background: #222;
 }
 
 .picker-container {
@@ -110,7 +110,6 @@ button {
 .vals-container {
   width: 100%;
   height: $row-height * 2;
-  border: 1px solid black;
 }
 
 .R-val {
@@ -170,5 +169,6 @@ button {
 }
 
 .sat-minus {
-
+  // fix layout rounding errors
+  height: $row-height * 2 + 1;
 }
