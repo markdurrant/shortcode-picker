@@ -4,13 +4,44 @@
   <meta charset="utf-8">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title></title> <!-- ADD A TITLE! -->
+  <title>SHORTCODE PICKER</title>
 
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
+  <div class="info-container"></div> <!-- end .info-container -->
 
+  <div class="picker-container">
+    <!-- plus R, G, B buttons -->
+    <div class="plus-vals-container">
+      <button class="R-plus"></button>
+      <button class="G-plus"></button>
+      <button class="B-plus"></button>
+    </div>
+
+    <!-- display current shortcode -->
+    <div class="vals-container">
+      <div class="R-val"></div>
+      <div class="G-val"></div>
+      <div class="B-val"></div>
+    </div>
+
+    <!-- minus R, G, B buttons -->
+    <div class="minus-vals-container">
+      <button class="R-minus"></button>
+      <button class="G-minus"></button>
+      <button class="B-minus"></button>
+    </div>
+
+    <!-- lighten / darken buttons -->
+    <button class="RGB-plus"></button>
+    <button class="RGB-minus"></button>
+
+    <!-- saturation buttons -->
+    <button class="sat-plus"></button>
+    <button class="sat-minus"></button>
+  </div> <!-- end .picker-container -->
 
   <script src="js/vendor/jquery-2.1.1.min.js"></script>
   <script src="js/main.js"></script>

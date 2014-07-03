@@ -189,21 +189,92 @@ table {
 td, th {
   padding: 0; }
 
-/* line 22, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+/* line 29, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
 *, *::before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased; }
 
-/* line 28, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+/* line 35, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
 ul {
   padding: 0;
   list-style: none; }
 
-/* line 34, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+/* line 41, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
 html, body {
+  width: 100%;
+  height: 100%; }
+
+/* line 46, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+body {
   background-color: white;
   color: black;
   font-family: sans-serif;
-  line-height: 1.4; }
+  line-height: 1.4;
+  overflow: hidden; }
+
+/* line 57, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid black;
+  background: white;
+  outline: 0;
+  display: block;
+  float: left; }
+
+/* line 67, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+.info-container {
+  width: 14.28571%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #023; }
+
+/* line 76, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+.picker-container {
+  width: 85.71429%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 14.28571%; }
+  /* line 8, /Users/mark/repos/shortcode-picker/src/sass/_mixins.scss */
+  .picker-container:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+/* line 86, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+.plus-vals-container {
+  width: 100%;
+  height: 8.33333%; }
+
+/* line 93, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+.R-plus, .G-plus, .B-plus {
+  width: 33.33333%;
+  height: 100%; }
+
+/* line 110, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+.vals-container {
+  width: 100%;
+  height: 16.66667%;
+  border: 1px solid black; }
+
+/* line 128, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+.minus-vals-container {
+  width: 100%;
+  height: 8.33333%; }
+
+/* line 135, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+.R-minus, .G-minus, .B-minus {
+  width: 33.33333%;
+  height: 100%; }
+
+/* line 155, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+.RGB-plus, .RGB-minus, .sat-plus, .sat-minus {
+  width: 100%;
+  height: 16.66667%; }
+
