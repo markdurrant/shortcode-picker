@@ -14,7 +14,7 @@ $paper:  white;
 $ink:    black;
 
 // grid setup
-$rows: 12;
+$rows: 24;
 $cols:  7;
 
 $row-height: ( 100% / $rows );
@@ -28,7 +28,7 @@ $col-width:  ( 100% / $cols );
 *::before,
 *:after {
   box-sizing: border-box;
-  // -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 
 // remove padding & list styles from all <ul> as default
@@ -86,7 +86,7 @@ button {
 .plus-vals-container,
 .minus-vals-container {
   width: 100%;
-  height: $row-height;
+  height: $row-height * 3;
 }
 
 .R-plus, .R-minus,
@@ -96,7 +96,7 @@ button {
   height: 100%;
 
   span {
-    font-size: 1.5em;
+    font-size: 1.75em;
     display: inline-block;
     height: 1.1em;
     padding-top: 0.2em;
@@ -125,50 +125,19 @@ button {
 
 }
 
-.vals-container {
+.current-code-container {
   width: 100%;
-  height: $row-height * 2;
-}
-
-.R-val,
-.G-val,
-.B-val {
-  float: left;
-  height: 100%;
-  width: ( 100% / 3 );
+  height: $row-height * 6;
   position: relative;
-
-  span {
-    position: absolute;
-    font-size: 4em;
-    display: inline-block;
-    height: 1.15em;
-    top: 50%;
-
-    // faux bold
-    text-shadow:
-      1px 0px 0 white,
-      0px 1px 0 white,
-      -1px 0px 0 white,
-      0px -1px 0 white,
-      1px 1px 0 white,
-      -1px -1px 0 white;
-  }
 }
 
-.R-val span{
-  right: 0;
-  transform: translateY( -50% );
-}
-
-.G-val span{
-  left: 50%;
-  transform: translate( -50%, -50% );
-}
-
-.B-val span {
-  left: 0;
-  transform: translateY( -50% );
+.current-code-container span {
+  width: 100%;
+  text-align: center;
+  font-size: 7em;
+  position: absolute;
+  top: 50%;
+  transform: translateY( -40% );
 }
 
 .minus-vals-container {
@@ -198,11 +167,10 @@ button {
 .sat-plus,
 .sat-minus {
   width: 100%;
-  height: $row-height * 2;
-  position: relative;
+  height: $row-height * 3;
 
   span {
-    font-size: 3em;
+    font-size: 2.5em;
     display: inline-block;
     height: 1.15em;
   }
@@ -222,5 +190,5 @@ button {
 
 .sat-minus {
   // fix layout rounding errors
-  height: $row-height * 2 + 1;
+  height: $row-height * 3 + 1;
 }

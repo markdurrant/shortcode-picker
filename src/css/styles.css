@@ -193,7 +193,8 @@ td, th {
 *, *::before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased; }
 
 /* line 35, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
 ul {
@@ -249,7 +250,7 @@ button {
 /* line 87, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
 .plus-vals-container, .minus-vals-container {
   width: 100%;
-  height: 8.33333%; }
+  height: 12.5%; }
 
 /* line 94, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
 .R-plus, .R-minus, .G-plus, .G-minus, .B-plus, .B-minus {
@@ -257,63 +258,38 @@ button {
   height: 100%; }
   /* line 98, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
   .R-plus span, .R-minus span, .G-plus span, .G-minus span, .B-plus span, .B-minus span {
-    font-size: 1.5em;
+    font-size: 1.75em;
     display: inline-block;
     height: 1.1em;
     padding-top: 0.2em; }
 
 /* line 128, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
-.vals-container {
+.current-code-container {
   width: 100%;
-  height: 16.66667%; }
-
-/* line 135, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
-.R-val, .G-val, .B-val {
-  float: left;
-  height: 100%;
-  width: 33.33333%;
+  height: 25%;
   position: relative; }
-  /* line 141, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
-  .R-val span, .G-val span, .B-val span {
-    position: absolute;
-    font-size: 4em;
-    display: inline-block;
-    height: 1.15em;
-    top: 50%;
-    text-shadow: 1px 0px 0 white, 0px 1px 0 white, -1px 0px 0 white, 0px -1px 0 white, 1px 1px 0 white, -1px -1px 0 white; }
 
-/* line 159, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
-.R-val span {
-  right: 0;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%); }
+/* line 134, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+.current-code-container span {
+  width: 100%;
+  text-align: center;
+  font-size: 7em;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-40%);
+  -ms-transform: translateY(-40%);
+  transform: translateY(-40%); }
 
-/* line 164, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
-.G-val span {
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); }
-
-/* line 169, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
-.B-val span {
-  left: 0;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%); }
-
-/* line 199, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+/* line 168, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
 .RGB-plus, .RGB-minus, .sat-plus, .sat-minus {
   width: 100%;
-  height: 16.66667%;
-  position: relative; }
-  /* line 204, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+  height: 12.5%; }
+  /* line 172, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
   .RGB-plus span, .RGB-minus span, .sat-plus span, .sat-minus span {
-    font-size: 3em;
+    font-size: 2.5em;
     display: inline-block;
     height: 1.15em; }
 
-/* line 223, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+/* line 191, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
 .sat-minus {
-  height: 17.66667%; }
+  height: 13.5%; }

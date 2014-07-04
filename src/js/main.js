@@ -1,6 +1,19 @@
 ( function() {
   'use strict';
 
+  // cache elements
+  var rPlusElm = $( '.R-plus' ),
+    gPlusElm = $( '.G-plus' ),
+    bPlusElm = $( '.B-plus' ),
+    rMinusElm = $( '.R-minus' ),
+    gMinusElm = $( '.G-minus' ),
+    bMinusElm = $( '.B-minus' ),
+    rgbPlusElm = $( '.RGB-plus' ),
+    rgbMinusElm = $( '.RGB-minus' ),
+    satPlusElm = $( '.sat-plus' ),
+    satMinusElm = $( '.sat-minus' ),
+    curentCodeElm = $( '.current-code-container' );
+
   // set background to data-shortcode attribute
   function paintShortCode( elm ) {
     elm.css( 'background', elm.attr( 'data-shortcode' ) );
@@ -8,7 +21,7 @@
 
   // set text to data-shortcode attribute
   function printShortCode( elm ) {
-    elm.children().text( elm.attr( 'data-shortcode' ).substring( 1 ) );
+    elm.children().text( elm.attr( 'data-shortcode' ) );
   }
 
   // set button colors & text
@@ -17,15 +30,8 @@
     printShortCode( $( this ) );
   } );
 
-  // set current code color
-  paintShortCode( $( '.vals-container' ) );
-
-  // get currect shortcode
-  var currentCode = $( '.vals-container' ).attr( 'data-shortcode' );
-
-  // set currect code text
-  $( '.R-val span' ).text( currentCode.charAt( 1 ) );
-  $( '.G-val span' ).text( currentCode.charAt( 2 ) );
-  $( '.B-val span' ).text( currentCode.charAt( 3 ) );
+  // set current code color & text
+  paintShortCode( curentCodeElm );
+  printShortCode( curentCodeElm );
 
 }() ); // end 'use strict'
