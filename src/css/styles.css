@@ -255,21 +255,24 @@ button {
 /* line 94, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
 .R-plus, .R-minus, .G-plus, .G-minus, .B-plus, .B-minus {
   width: 33.33333%;
-  height: 100%; }
-  /* line 98, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+  height: 100%;
+  -webkit-transition: background 1s;
+  transition: background 1s; }
+  /* line 99, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
   .R-plus span, .R-minus span, .G-plus span, .G-minus span, .B-plus span, .B-minus span {
     font-size: 1.75em;
     display: inline-block;
     height: 1.1em;
     padding-top: 0.2em; }
 
-/* line 128, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+/* line 129, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
 .current-code-container {
   width: 100%;
   height: 25%;
-  position: relative; }
+  position: relative;
+  pointer-events: none; }
 
-/* line 134, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+/* line 136, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
 .current-code-container span {
   width: 100%;
   text-align: center;
@@ -280,17 +283,17 @@ button {
   -ms-transform: translateY(-40%);
   transform: translateY(-40%); }
 
-/* line 168, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+/* line 170, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
 .RGB-plus, .RGB-minus, .sat-plus, .sat-minus {
   width: 50%;
   height: 25%; }
-  /* line 172, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+  /* line 174, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
   .RGB-plus span, .RGB-minus span, .sat-plus span, .sat-minus span {
     font-size: 3em;
     display: inline-block;
     height: 1.15em; }
 
-/* line 188, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
+/* line 190, /Users/mark/repos/shortcode-picker/src/sass/styles.scss */
 .sat-plus, .sat-minus {
   height: 26%; }
 

@@ -58,28 +58,41 @@
   // set the current shortcode value
   var curentCode = "#39D";
 
-  // set current code data attribute
-  setShortCode( curentCodeElm, curentCode );
+  // set all shortcode data attribute
+  function setAllShortcodes () {
+    // set current code data attribute
+    setShortCode( curentCodeElm, curentCode );
 
-  // set data attributes for eveything else
-  setShortCode( rPlusElm, shiftShortCode( curentCode, [ 1, 0, 0 ] ) );
-  setShortCode( gPlusElm, shiftShortCode( curentCode, [ 0, 1, 0 ] ) );
-  setShortCode( bPlusElm, shiftShortCode( curentCode, [ 0, 0, 1 ] ) );
-  setShortCode( rMinusElm, shiftShortCode( curentCode, [ -1, 0, 0 ] ) );
-  setShortCode( gMinusElm, shiftShortCode( curentCode, [ 0, -1, 0 ] ) );
-  setShortCode( bMinusElm, shiftShortCode( curentCode, [ 0, 0, -1 ] ) );
-  setShortCode( bMinusElm, shiftShortCode( curentCode, [ 0, 0, -1 ] ) );
-  setShortCode( rgbPlusElm, shiftShortCode( curentCode, [ 1, 1, 1 ] ) );
-  setShortCode( rgbMinusElm, shiftShortCode( curentCode, [ -1, -1, -1 ] ) );
+    // set data attributes for eveything else
+    setShortCode( rPlusElm, shiftShortCode( curentCode, [ 1, 0, 0 ] ) );
+    setShortCode( gPlusElm, shiftShortCode( curentCode, [ 0, 1, 0 ] ) );
+    setShortCode( bPlusElm, shiftShortCode( curentCode, [ 0, 0, 1 ] ) );
+    setShortCode( rMinusElm, shiftShortCode( curentCode, [ -1, 0, 0 ] ) );
+    setShortCode( gMinusElm, shiftShortCode( curentCode, [ 0, -1, 0 ] ) );
+    setShortCode( bMinusElm, shiftShortCode( curentCode, [ 0, 0, -1 ] ) );
+    setShortCode( bMinusElm, shiftShortCode( curentCode, [ 0, 0, -1 ] ) );
+    setShortCode( rgbPlusElm, shiftShortCode( curentCode, [ 1, 1, 1 ] ) );
+    setShortCode( rgbMinusElm, shiftShortCode( curentCode, [ -1, -1, -1 ] ) );
+  }
+  setAllShortcodes();
 
-  // set button colors & text
-  allButons.each( function() {
-    paintShortCode( $( this ) );
-    printShortCode( $( this ) );
-  } );
+  function paintAndPrintAll () {
+    // set button colors & text
+    allButons.each( function() {
+      paintShortCode( $( this ) );
+      printShortCode( $( this ) );
+    } );
 
-  // set current code color & text
-  paintShortCode( curentCodeElm );
-  printShortCode( curentCodeElm );
+    // set current code color & text
+    paintShortCode( curentCodeElm );
+    printShortCode( curentCodeElm );
+  }
+  paintAndPrintAll();
+
+  allButons.click( function () {
+    curentCode = $( this ).attr( 'data-shortcode' );
+    setAllShortcodes();
+    paintAndPrintAll();
+  });
 
 }() ); // end 'use strict'

@@ -94,6 +94,7 @@ button {
 .B-plus, .B-minus {
   width: ( 100% / 3 );
   height: 100%;
+  transition: background 1s;
 
   span {
     font-size: 1.75em;
@@ -129,6 +130,7 @@ button {
   width: 100%;
   height: $row-height * 6;
   position: relative;
+  pointer-events: none;
 }
 
 .current-code-container span {
