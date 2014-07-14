@@ -70,7 +70,11 @@
   }
 
   // set the current shortcode value
-  var curentCode = "#39D";
+  var curentCode = rgbToShortCode( [
+    Math.random() * 255,
+    Math.random() * 255,
+    Math.random() * 255
+  ] );
 
   // set all shortcode data attribute
   function setAllShortcodes() {
