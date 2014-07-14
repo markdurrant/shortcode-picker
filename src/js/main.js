@@ -59,7 +59,7 @@
   var curentCode = "#39D";
 
   // set all shortcode data attribute
-  function setAllShortcodes () {
+  function setAllShortcodes() {
     // set current code data attribute
     setShortCode( curentCodeElm, curentCode );
 
@@ -76,7 +76,13 @@
   }
   setAllShortcodes();
 
-  function paintAndPrintAll () {
+  // set sortcode for sat plus
+  function setSatPlusShortcode() {
+
+  }
+  setSatPlusShortcode();
+
+  function paintAndPrintAll() {
     // set button colors & text
     allButons.each( function() {
       paintShortCode( $( this ) );
@@ -89,10 +95,10 @@
   }
   paintAndPrintAll();
 
-  allButons.click( function () {
+  allButons.click( function() {
     curentCode = $( this ).attr( 'data-shortcode' );
     setAllShortcodes();
     paintAndPrintAll();
-  });
+  } );
 
 }() ); // end 'use strict'

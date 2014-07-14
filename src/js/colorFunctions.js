@@ -96,15 +96,54 @@
     return [ r, g, b ];
   }
 
-  // convert rgb to shortcode
-  function rgbToShortCode( array ) {
+  // function rgb to hex
+  function rgbToHex( array ) {
+    var r, g, b;
 
+    if ( array[ 0 ] < 15 ) {
+      r = "0" + array[ 0 ].toString( 16 ).toUpperCase();
+    } else {
+      r = array[ 0 ].toString( 16 ).toUpperCase();
+    }
+
+    if ( array[ 1 ] < 15 ) {
+      g = "0" + array[ 1 ].toString( 16 ).toUpperCase();
+    } else {
+      g = array[ 1 ].toString( 16 ).toUpperCase();
+    }
+
+    if ( array[ 2 ] < 15 ) {
+      b = "0" + array[ 2 ].toString( 16 ).toUpperCase();
+    } else {
+      b = array[ 2 ].toString( 16 ).toUpperCase();
+    }
+
+    return "#" + r + g + b;
   }
 
-  var example = [ 123, 45, 225 ];
+  // convert rgb to shortcode
+  function rgbToShortCode( array ) {
+    return "#" +
+      Math.round( array[ 0 ] / 17 ).toString( 16 ).toUpperCase() +
+      Math.round( array[ 1 ] / 17 ).toString( 16 ).toUpperCase() +
+      Math.round( array[ 2 ] / 17 ).toString( 16 ).toUpperCase();
+  }
+
+  // shortcode to rgb
+  function shortcodeToRgb( shortcode ) {
+    var r = parseInt( shortcode.substring( 1, 2 ), 16 ) * 17;
+    var g = parseInt( shortcode.substring( 2, 3 ), 16 ) * 17;
+    var b = parseInt( shortcode.substring( 3, 4 ), 16 ) * 17;
+    return [ r, g, b ];
+  }
+
+  var example = [ 255, 0, 153 ];
 
   console.log( "RGB", example );
   console.log( "HSL", rgbToHsl( example ) );
   console.log( "RGB", hslToRgb( [ 266, 75, 53 ] ) );
+  console.log( "HEX", rgbToHex( example ) );
+  console.log( "shortcode", rgbToShortCode( example ) );
+  console.log( "RGB", shortcodeToRgb( "#F09" ) );
 
 }() ); // end 'use strict'
