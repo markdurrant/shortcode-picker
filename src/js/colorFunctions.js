@@ -42,10 +42,7 @@
     return [ h, s, l ];
   }
 
-  var example = [ 51, 153, 221 ];
-  // example = [ 255, 255, 255 ];
-
-  console.log( "old output", rgbToHsl( example[ 0 ], example[ 1 ], example[ 2 ] ) );
+  var example = [ 123, 45, 225 ];
 
   // my rgb to hsl. Based on http://axonflux.com/handy-rgb-to-hsl-and-rgb-to-hsv-color-model-c
   // input rgb array [ r, g, b ] r,g,b 0-255
@@ -60,11 +57,8 @@
     var max = Math.max( r, g, b ),
       min = Math.min( r, g, b );
 
-
     // set lumiosity to the average of the highest & lowest values
-    // multiply by 100 and round to get senible value
     var l = ( max + min ) / 2;
-    l = parseInt( l * 100 );
 
     // init h, & s vars
     var h, s;
@@ -72,13 +66,41 @@
     // set delta
     var delta = max - min;
 
-    // highest & lowest values are the same the color has 0 hue or saturation
+    // set saturation | I don't understant this bit
+    if ( l > 0.5 ) {
+      s = delta / ( 2 - max - min );
+    } else {
+      s = delta / ( max + min );
+    }
+
+    // set hue
+    // if mostly red
+    if ( max === r ) {
+      h = ( g - b ) / delta + ( g < b ? 6 : 0 );
+    }
+    // if mostly green
+    else if ( max === g ) {
+      h = ( b - r ) / delta + 2;
+    }
+    // if mostly blue
+    else if ( max === b ) {
+
+      h = ( r - g ) / delta + 4;
+    }
+    h /= 6;
+
+    // multiply by 100 and round to get senible values
+    l = Math.round( l * 100 );
+    s = Math.round( s * 100 );
+    h = Math.round( h * 360 );
+
+    // highest & lowest values are the same the color has 0 hue and 0 saturation
     if ( max === min ) {
       h = 0;
       s = 0;
     }
 
-    return [ "RGB", r, g, b, "HSL", h, s, l ];
+    return [ "RGB", r * 255, g * 255, b * 255, "HSL", h, s, l ];
   }
 
   console.log( myHsl( example ) );
