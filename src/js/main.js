@@ -55,6 +55,20 @@
       shiftValue( shortCode.charAt( 3 ), array[ 2 ] );
   }
 
+  // shift a shortcode by sat
+  function shiftSat( shortcode, shift ) {
+    var hsl = shortcodeToHsl( shortcode );
+    hsl[ 1 ] += shift;
+    if ( hsl[ 1 ] > 100 ) {
+      hsl[ 1 ] = 100;
+    }
+
+    if ( hsl[ 1 ] < 0 ) {
+      hsl[ 1 ] = 0;
+    }
+    return hslToShortcode( hsl );
+  }
+
   // set the current shortcode value
   var curentCode = "#39D";
 
@@ -73,14 +87,10 @@
     setShortCode( bMinusElm, shiftShortCode( curentCode, [ 0, 0, -1 ] ) );
     setShortCode( rgbPlusElm, shiftShortCode( curentCode, [ 1, 1, 1 ] ) );
     setShortCode( rgbMinusElm, shiftShortCode( curentCode, [ -1, -1, -1 ] ) );
+    setShortCode( satPlusElm, shiftSat( curentCode, 10 ) );
+    setShortCode( satMinusElm, shiftSat( curentCode, -10 ) );
   }
   setAllShortcodes();
-
-  // set sortcode for sat plus
-  function setSatPlusShortcode() {
-
-  }
-  setSatPlusShortcode();
 
   function paintAndPrintAll() {
     // set button colors & text
